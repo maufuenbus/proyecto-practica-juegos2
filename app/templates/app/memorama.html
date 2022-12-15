@@ -12,11 +12,11 @@
 <link rel="stylesheet" href="{% static 'app/css/fontawesome-all.min.css' %}">
 
 <div class="page-wrapper">
-    <div id="">
-        <ul>
-            <li><a href="{% url 'memorama' %}">4x4</a></li>
-            <li><a href="{% url 'grilla6x6' %}">6x6</a></li>
-            <li><a href="{% url 'grilla8x8' %}">8x8</a></li>
+    <div style="width: 100%; display: flex;">
+        <ul style=" list-style:none; width: 100%; display:flex;justify-content:center; font-size:24px;"">
+            <li><a style=" text-decoration: none;" href="{% url 'memorama' %}">4x4</a></li>
+            <li><a style="text-decoration: none;" href="{% url 'grilla6x6' %}">6x6</a></li>
+            <li><a style="text-decoration: none;" href="{% url 'grilla8x8' %}">8x8</a></li>
         </ul>
     </div>
 
