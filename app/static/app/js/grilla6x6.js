@@ -7,7 +7,7 @@ let segundoResultado = null;
 let movimientos = 0;
 let aciertos = 0;
 let temporizador = false;
-let timer = 60;
+let timer = 6;
 let timerInicial = timer;
 let tiempoRegresivoId = null;
 let winAudio = new Audio('/static/app/recursos/sonidos-memorice/win.wav')
@@ -40,7 +40,7 @@ function contarTiempo() {
 }
 
 function bloquearTarjetas() {
-    for (let i = 0; i <= 15; i++) {
+    for (let i = 0; i <= 35; i++) {
         let tarjetaBloada = document.getElementById(i);
         tarjetaBloada.innerHTML = `<img src="/static/app/recursos/images/${numeros[i]}.png" alt="">`;;
         tarjetaBloada.disabled = true;
