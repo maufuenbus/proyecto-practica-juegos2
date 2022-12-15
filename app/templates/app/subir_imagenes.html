@@ -19,6 +19,31 @@
                     <div class="miniatura">
                         <div class="preview" id="preview"></div>
                     </div>
+
+                    {% load crispy_forms_tags %}
+                    <form action="" method="post">
+                        <div style="display: none;">
+
+                            {% csrf_token %}
+                            {{form | crispy}}
+
+                        </div>
+
+                    </form>
+
+                    <div id="btn-guardar">
+                        <button type="submit" class="boton-restart">Subir Imagenes</button>
+                    </div>
+                    {{ mensaje }}
+
+
+
+
+
+
+
+
+
                 </div>
                 <div class="modal-footer">
 
@@ -27,5 +52,7 @@
         </div>
     </div>
 </div>
+
+
 <script src="{% static 'app/js/carga-imagenes.js' %}"></script>
 {% endblock %}

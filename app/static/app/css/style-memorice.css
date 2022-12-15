@@ -26,9 +26,19 @@ tr {
 }
 
 .carta{
-    font-weight: bold;
-    font-size: 25px;
+    overflow: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     color: #000000;
+    width: 100px;
+    height: 100px;
+}
+img{
+    
+    border-radius: 5px;
     width: 100px;
     height: 100px;
 }
@@ -84,6 +94,7 @@ button:hover{
         justify-content: center;
     }
 }
+
 
 
 

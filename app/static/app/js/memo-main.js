@@ -10,11 +10,11 @@ let temporizador = false;
 let timer = 60;
 let timerInicial = timer;
 let tiempoRegresivoId = null;
-let winAudio = new Audio('static/app/recursos/sonidos-memorice/win.wav')
-let loseAudio = new Audio('static/app/recursos/sonidos-memorice/lose.wav')
-let clickAudio = new Audio('static/app/recursos/sonidos-memorice/click.wav')
-let rightAudio = new Audio('static/app/recursos/sonidos-memorice/right.wav')
-let wrongAudio = new Audio('static/app/recursos/sonidos-memorice/wrong.wav')
+let winAudio = new Audio('/static/app/recursos/sonidos-memorice/win.wav')
+let loseAudio = new Audio('/static/app/recursos/sonidos-memorice/lose.wav')
+let clickAudio = new Audio('/static/app/recursos/sonidos-memorice/click.wav')
+let rightAudio = new Audio('/static/app/recursos/sonidos-memorice/right.wav')
+let wrongAudio = new Audio('/static/app/recursos/sonidos-memorice/wrong.wav')
 
 //apuntandor html
 let mostrarMovimientos = document.getElementById('movimientos')
@@ -42,7 +42,7 @@ function contarTiempo() {
 function bloquearTarjetas() {
     for (let i = 0; i <= 15; i++) {
         let tarjetaBloada = document.getElementById(i);
-        tarjetaBloada.innerHTML = numeros[i];
+        tarjetaBloada.innerHTML = `<img src="/static/app/recursos/images/${numeros[i]}.png" alt="">`;;
         tarjetaBloada.disabled = true;
     }
 }
@@ -61,7 +61,7 @@ function destapar(id) {
         //mostrar primer elemento
         tarjeta1 = document.getElementById(id);
         primerResultado = numeros[id];
-        tarjeta1.innerHTML = numeros[id];
+        tarjeta1.innerHTML = `<img src="/static/app/recursos/images/${primerResultado}.png" alt="">`;
         clickAudio.play();
         //deshabilitar primer boton
         tarjeta1.disabled = true;
@@ -69,7 +69,7 @@ function destapar(id) {
         //mostrar segundo elemento
         tarjeta2 = document.getElementById(id);
         segundoResultado = numeros[id];
-        tarjeta2.innerHTML = segundoResultado;
+        tarjeta2.innerHTML = `<img src="/static/app/recursos/images/${segundoResultado}.png" alt="">`;;
 
         ////deshabilitar segundo boton
         tarjeta2.disabled = true;

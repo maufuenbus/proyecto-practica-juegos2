@@ -9,7 +9,21 @@ from django.shortcuts import redirect
 
 
 def subir_imagenes(request):
-    return render(request, 'app/subir_imagenes.html')
+    data2 = {
+        'form': GaleriaForm,
+    }
+    if request.method == 'POST':
+        print("ESTOY ADENTRO DEL IFFF")
+        formulario = GaleriaForm(data=request.POST)
+        if formulario.is_valid():
+            post = formulario.save(commit=False)
+            post.imagenes = request.POST[""]
+            post.usuario_id = request.user.id
+            formulario.save()
+        else:
+            formulario = MemoriceForm()
+    return render(request, 'app/subir_imagenes.html', data2)
+    # return render(request, 'app/subir_imagenes.html')
 
 
 def crucigrama(request):
