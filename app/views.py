@@ -8,6 +8,14 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 
 
+def grilla6x6(request):
+    return render(request, 'app/grilla6x6.html')
+
+
+def grilla8x8(request):
+    return render(request, 'app/grilla8x8.html')
+
+
 def subir_imagenes(request):
     data2 = {
         'form': GaleriaForm,

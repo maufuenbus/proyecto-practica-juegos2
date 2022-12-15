@@ -6,11 +6,22 @@
 {% endblock %}
 
 {% block contenido %}
+
+
 <link rel="stylesheet" href="{% static 'app/css/style-memorice.css' %}">
 <link rel="stylesheet" href="{% static 'app/css/fontawesome-all.min.css' %}">
 
 <div class="page-wrapper">
+    <div id="">
+        <ul>
+            <li><a href="{% url 'memorama' %}">4x4</a></li>
+            <li><a href="{% url 'grilla6x6' %}">6x6</a></li>
+            <li><a href="{% url 'grilla8x8' %}">8x8</a></li>
+        </ul>
+    </div>
+
     <main>
+
         <section class="section1">
             <h1 class="titulo"> 🎴​ juego de memoria 🎴​</h1>
             <table>
