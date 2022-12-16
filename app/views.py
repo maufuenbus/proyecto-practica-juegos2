@@ -9,10 +9,40 @@ from django.shortcuts import redirect
 
 
 def grilla6x6(request):
-    return render(request, 'app/grilla6x6.html')
+    data = {
+        'form': MemoriceForm,
+    }
+    if request.method == 'POST':
+        print("ESTOY ADENTRO DEL IFFF")
+        formulario = MemoriceForm(data=request.POST)
+        if formulario.is_valid():
+            post = formulario.save(commit=False)
+            post.acierto = request.POST["acierto"]
+            post.tiempo = request.POST["tiempo"]
+            post.movimientos = request.POST["movimientos"]
+            post.usuario_id = request.user.id
+            formulario.save()
+        else:
+            formulario = MemoriceForm()
+    return render(request, 'app/grilla6x6.html', data)
 
 
 def grilla8x8(request):
+    data = {
+        'form': MemoriceForm,
+    }
+    if request.method == 'POST':
+        print("ESTOY ADENTRO DEL IFFF")
+        formulario = MemoriceForm(data=request.POST)
+        if formulario.is_valid():
+            post = formulario.save(commit=False)
+            post.acierto = request.POST["acierto"]
+            post.tiempo = request.POST["tiempo"]
+            post.movimientos = request.POST["movimientos"]
+            post.usuario_id = request.user.id
+            formulario.save()
+        else:
+            formulario = MemoriceForm()
     return render(request, 'app/grilla8x8.html')
 
 

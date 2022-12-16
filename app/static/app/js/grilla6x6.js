@@ -42,7 +42,7 @@ function contarTiempo() {
 function bloquearTarjetas() {
     for (let i = 0; i <= 35; i++) {
         let tarjetaBloada = document.getElementById(i);
-        tarjetaBloada.innerHTML = `<img src="/static/app/recursos/images/${numeros[i]}.png" alt="">`;;
+        tarjetaBloada.innerHTML = `<img src="/static/app/recursos/images/${numeros[i]}.png" alt="">`;
         tarjetaBloada.disabled = true;
     }
 }
